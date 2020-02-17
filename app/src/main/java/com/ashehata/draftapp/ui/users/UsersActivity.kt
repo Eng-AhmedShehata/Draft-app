@@ -1,7 +1,8 @@
-package com.ashehata.draftapp
+package com.ashehata.draftapp.ui.users
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ashehata.draftapp.R
 
 class UsersActivity : AppCompatActivity() {
 
