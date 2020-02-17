@@ -1,4 +1,6 @@
 package com.ashehata.draftapp.ui.addUser
 
-class AddUserViewModel {
+import androidx.lifecycle.ViewModel
+
+class AddUserViewModel : ViewModel() {
 }
