@@ -37,6 +37,7 @@ dependencies {
     // RxKotlin and RxAndroid
     implementation "io.reactivex.rxjava2:rxkotlin:2.0.0"
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
 
     // Room
     implementation "android.arch.persistence.room:runtime:1.0.0-alpha2"
