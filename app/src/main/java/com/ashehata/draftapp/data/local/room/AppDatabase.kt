@@ -12,7 +12,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     companion object {
 
-        private lateinit var INSTANCE: AppDatabase
+        private var INSTANCE: AppDatabase? = null
 
         fun getDatabase(context: Context): AppDatabase {
             if (INSTANCE == null) {
@@ -20,10 +20,10 @@ abstract class AppDatabase : RoomDatabase() {
                     context,
                     AppDatabase::class.java,
                     "room_db")
-                    .build()
+                    .allowMainThreadQueries().build()
             }
 
-            return INSTANCE
+            return INSTANCE as AppDatabase
         }
     }
 }

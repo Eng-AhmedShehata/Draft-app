@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ashehata.draftapp.R
+import com.ashehata.draftapp.data.local.room.AppDatabase
 import com.ashehata.draftapp.data.local.room.User
 import kotlinx.android.synthetic.main.activity_add_user.*
 
@@ -19,6 +20,7 @@ class AddUserActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(AddUserViewModel::class.java)
         viewModel.isValid.observe(this, Observer {
+
             Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
         })
         setAddBtnClicked()
@@ -28,10 +30,11 @@ class AddUserActivity : AppCompatActivity() {
     private fun setAddBtnClicked() {
         btn_add.setOnClickListener {
 
+            // Get entered data from ETs
             val name = et_userName.text.toString()
             val salary = et_userSalary.text.toString().toIntOrNull()
-
-            viewModel.setUserData(User(12, name, salary))
+            // Passing data to viewModel class
+            viewModel.setUserData(User(null, name, salary))
         }
     }
 }

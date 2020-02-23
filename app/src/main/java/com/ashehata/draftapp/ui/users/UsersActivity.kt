@@ -13,14 +13,15 @@ class UsersActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_users)
         setFabClicked()
+
     }
 
     private fun setFabClicked() {
         fab_add.setOnClickListener{
             startActivity(Intent(this, AddUserActivity::class.java).apply {
                 // Here, you can add any fields to intent
-
             })
         }
+
     }
 }

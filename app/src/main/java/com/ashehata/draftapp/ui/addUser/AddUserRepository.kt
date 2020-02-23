@@ -8,11 +8,8 @@ import kotlin.concurrent.thread
 class AddUserRepository(val context: Context) {
 
     fun saveUserData(user: User) {
+        // Insert user into db
+        AppDatabase.getDatabase(context).userDao().addUser(user)
 
-        thread {
-            // insert user into db
-            AppDatabase.getDatabase(context).userDao().addUser(user)
-        }.start()
     }
-
 }
